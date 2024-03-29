@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const index = ({
+const Button = ({
   label,
   backgroundColor = '#02CF8E',
   textColor = '#020202',
@@ -17,7 +17,7 @@ const index = ({
   );
 };
 
-export default index;
+export default Button;
 
 const styles = StyleSheet.create({
   container: backgroundColor => ({
