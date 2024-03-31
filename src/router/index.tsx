@@ -39,11 +39,6 @@ const Router = () => {
         component={CashOnHand}
         options={{headerShown: false}}
       />
-      <Stack.Screen
-        name="CashOnBank"
-        component={CashOnBank}
-        options={{headerShown: false}}
-      />
     </Stack.Navigator>
   );
 };

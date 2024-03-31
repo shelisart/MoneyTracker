@@ -1,49 +1,67 @@
+import {StyleSheet, Text, ScrollView, View, Image} from 'react-native';
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Button, Gap, PageHeader} from '../../components';
 import {useNavigation} from '@react-navigation/native';
-
+import {PageHeader, Gap, Button} from '../../components';
 const Home = () => {
   const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <PageHeader
         type="withPhoto"
         label="Money Tracker"
-        sublabel="Track Your Money"
+        sublabel="Track your money"
         backButton={false}
       />
       <Gap height={20} />
       <View style={styles.contentWrapper}>
-        <Text>Your Balance</Text>
-        <Text>Rp. 10.000.000</Text>
-        {/* <View style={{flex: 1, height: 2, backgroundColor: 'black'}} /> */}
-
+        <Gap height={13} />
+        <Text style={[{fontSize: 16}, {fontWeight: 'bold'}, {marginLeft: 24}]}>
+          Your Balance
+        </Text>
+        <Gap height={4} />
+        <Text style={styles.money}>Rp.10.000.000</Text>
+        <Gap height={18} />
+        <View
+          style={{
+            flex: 1,
+            height: 2,
+            backgroundColor: 'black',
+          }}
+        />
+        <Gap height={20} />
         <View style={styles.cashOn}>
-          <Text>Cash On Hand</Text>
+          <Text style={{marginHorizontal: 20}}>Cash On Hand</Text>
           <Text>Rp. 4.000.000</Text>
         </View>
-
-        <View style={styles.cashOn}>
-          <Text>Cash On Bank</Text>
-          <Text>Rp. 6.000.000</Text>
+        <Gap height={11} />
+        <View style={[styles.cashOn, {marginVertical: 5}]}>
+          <Text style={{marginHorizontal: 20}}>Cash On Bank</Text>
+          <Text style={{paddingBottom: 40}}> Rp. 6.000.000</Text>
         </View>
       </View>
       <Gap height={20} />
       <View style={styles.contentWrapper2}>
-        <Text>Add Transaction</Text>
+        <Gap height={10.6} />
+        <Text style={{fontSize: 16, fontWeight: 'bold', marginLeft: 24}}>
+          Add Transaction
+        </Text>
+        <Gap height={8.81} />
         <Button
           label="Cash On Hand"
           onPress={() => navigation.navigate('CashOnHand')}
         />
+        <Gap height={18.04} />
         <Button
           label="Cash On Bank"
-          onPress={() => navigation.navigate('CashOnBank')}
+          onPress={() => navigation.navigate('Home')}
         />
+        <Gap height={71.27} />
       </View>
-    </View>
+    </ScrollView>
   );
 };
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
@@ -51,6 +69,8 @@ const styles = StyleSheet.create({
   },
   cashOn: {
     flexDirection: 'row',
+    fontSize: 14,
+    marginLeft: 20,
   },
   contentWrapper: {
     backgroundColor: '#FFFFFF',
@@ -62,6 +82,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 24,
   },
+  money: {
+    fontSize: 24,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
 });
-
-export default Home;
