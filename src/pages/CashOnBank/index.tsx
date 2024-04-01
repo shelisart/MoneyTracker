@@ -5,12 +5,12 @@ import {useNavigation} from '@react-navigation/native';
 import {Button, Gap, PageHeader, TextInput} from '../../components';
 import TransactionCard from '../../components/molecules/TransactionCard';
 
-const CashOnHand = () => {
+const CashOnBank = () => {
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       <PageHeader
-        label="Cash On Hand"
+        label="Cash On Bank"
         backButton={true}
         onPress={() => navigation.goBack()}
       />
@@ -50,7 +50,7 @@ const CashOnHand = () => {
   );
 };
 
-export default CashOnHand;
+export default CashOnBank;
 
 const styles = StyleSheet.create({
   container: {

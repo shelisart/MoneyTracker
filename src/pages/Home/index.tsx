@@ -30,19 +30,43 @@ const Home = () => {
         />
         <Gap height={20} />
         <View style={styles.cashOn}>
-          <Text style={{marginHorizontal: 20}}>Cash On Hand</Text>
-          <Text>Rp. 4.000.000</Text>
+          <Text
+            style={{marginHorizontal: 20, color: 'black', fontWeight: '400'}}>
+            Cash On Hand
+          </Text>
+          <Text
+            style={{marginHorizontal: 20, color: 'black', fontWeight: '500'}}>
+            Rp. 4.000.000
+          </Text>
         </View>
         <Gap height={11} />
         <View style={[styles.cashOn, {marginVertical: 5}]}>
-          <Text style={{marginHorizontal: 20}}>Cash On Bank</Text>
-          <Text style={{paddingBottom: 40}}> Rp. 6.000.000</Text>
+          <Text
+            style={{marginHorizontal: 20, color: 'black', fontWeight: '400'}}>
+            Cash On Bank
+          </Text>
+          <Text
+            style={{
+              marginHorizontal: 20,
+              color: 'black',
+              fontWeight: '500',
+              paddingBottom: 40,
+            }}>
+            {' '}
+            Rp. 6.000.000
+          </Text>
         </View>
       </View>
       <Gap height={20} />
       <View style={styles.contentWrapper2}>
         <Gap height={10.6} />
-        <Text style={{fontSize: 16, fontWeight: 'bold', marginLeft: 24}}>
+        <Text
+          style={{
+            fontSize: 16,
+            color: 'black',
+            fontWeight: '500',
+            marginLeft: 24,
+          }}>
           Add Transaction
         </Text>
         <Gap height={8.81} />
@@ -53,7 +77,7 @@ const Home = () => {
         <Gap height={18.04} />
         <Button
           label="Cash On Bank"
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => navigation.navigate('CashOnBank')}
         />
         <Gap height={71.27} />
       </View>
@@ -84,6 +108,7 @@ const styles = StyleSheet.create({
   },
   money: {
     fontSize: 24,
+    color: '#000000',
     textAlign: 'center',
     fontWeight: 'bold',
   },
